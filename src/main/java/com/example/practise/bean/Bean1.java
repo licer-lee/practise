@@ -2,8 +2,6 @@ package com.example.practise.bean;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 /**
  * Bean自身的方法
@@ -12,13 +10,9 @@ import org.springframework.stereotype.Component;
 @Configuration
 public class Bean1 {
 
-    @Bean(initMethod = "myInit", destroyMethod = "myDestory")
-    public void myBean1(){
-
+    @Bean(initMethod = "init", destroyMethod = "destroy")
+    public Bean2 bean2(){
+        return new Bean2();
     }
-
-    public void myInit(){}
-
-    public void myDestory(){}
 
 }
