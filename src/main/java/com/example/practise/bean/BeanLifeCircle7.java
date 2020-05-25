@@ -25,11 +25,11 @@ public class BeanLifeCircle7 implements BeanPostProcessor
      */
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if(bean instanceof BeanLifeCircle6){
+//        if(bean instanceof BeanLifeCircle6){
+            System.out.println("--------------------------------------------");
             System.out.println("postProcessBeforeInitialization bean = [" + bean + "], beanName = [" + beanName + "]");
             System.out.println("BeanPostProcessor接口方法postProcessAfterInitialization对属性进行更改！");
-            System.out.println("--------------------------------------------");
-        }
+//        }
         return bean;
     }
 
@@ -42,12 +42,11 @@ public class BeanLifeCircle7 implements BeanPostProcessor
      */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if(bean instanceof BeanLifeCircle6){
-
+//        if(bean instanceof BeanLifeCircle6){
             System.out.println("postProcessAfterInitialization bean = [" + bean + "], beanName = [" + beanName + "]");
             System.out.println("BeanPostProcessor接口方法postProcessBeforeInitialization对属性进行更改！");
             System.out.println("*********************************************");
-        }
+//        }
         return bean;
     }
 }
